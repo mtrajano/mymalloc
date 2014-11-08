@@ -1,0 +1,16 @@
+LIST OF TEST CASES COVERED BY TEXT:
+
+"errorchecking.c"
+  * asking for more memory than virtual memory has - error message printed saying that
+  * freeing a null pointer - results in an error message saying undefined behavior
+  * freeing an unitialized integer variable - (warning message surprassed) error message saying illegal memory trying to be freed
+  * freeing unitialized pointer - error message saying trying to free unallocated pointer
+  * freeing an incremented pointer acquired by malloc - error message saying trying to free unallocated pointer
+  * redundant freeing of a pointer - error message saying trying to free unallocated pointer (the second time it gets freed)
+  * virutal memory full (saturation) - null is returned, error message saying no more memory
+
+ "simpletest.c"
+  * contiguous small requested memory (10 bytes) until saturation, contiguous free of the memory - same number of allocated pointers as freed pointers
+  * contiguous large requested memory (500 bytes) until saturation, contiguous free of the memory - same number of allocated pointers as freed pointers
+  * contiguous random powers of 2 (2-1024 bytes) requested until saturation, contiguous free of the memory - same number of allocated pointers as freed pointers
+
